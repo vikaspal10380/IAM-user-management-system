@@ -1,0 +1,32 @@
+# ignore Terraform state and provider files
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
+.terraform.lock.hcl
+
+# Ignore variable override files (may contain secrets)
+*.auto.tfvars
+terraform.tfvars
+
+# Ignore crash logs
+crash.log
+crash.*.log
+
+# Ignore plan files
+*.tfplan
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore IDE/OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

@@ -1,0 +1,44 @@
+# ==============================================================================
+# TERRAFORM.TFVARS — Example Configuration
+# Copy this file to terraform.tfvars and customize the values
+# ==============================================================================
+
+# AWS Region
+aws_region = "us-east-1"
+
+# Project identification
+project_name = "iam-mgmt"
+environment  = "prod"
+
+# S3 bucket for CloudTrail audit logs
+# NOTE: S3 bucket names must be globally unique — customize this!
+audit_bucket_name = "iam-audit-logs-bucket-YOUR-ACCOUNT-ID"
+
+# CloudTrail trail name
+cloudtrail_name = "iam-audit-trail"
+
+# CloudWatch dashboard name
+cloudwatch_dashboard_name = "IAM-Monitoring-Dashboard"
+
+# EC2 configuration
+ec2_instance_type = "t2.micro"
+ec2_ami_id        = "" # Leave empty for latest Amazon Linux 2023
+ec2_key_pair_name = "" # Leave empty to skip SSH access
+ec2_vpc_id        = "" # Leave empty to use default VPC
+ec2_subnet_id     = "" # Leave empty to use default subnet
+
+# SNS alerts (Bonus feature)
+enable_sns_alerts = true
+alert_email       = "your-email@example.com"
+
+# Allow force-destroy for easy cleanup
+force_destroy_users = true
+s3_force_destroy    = true
+
+# Common tags applied to all resources
+common_tags = {
+  Project     = "IAM-User-Management-System"
+  ManagedBy   = "Terraform"
+  Environment = "prod"
+  Owner       = "your-name"
+}
